@@ -56,3 +56,16 @@
 ## Top & Stats System Commands
 ### ./mongotop ----------------------> Shows time spent per operations per collection
 ### ./mongostat ---------------------> Shows snapshot on the MongoDB system
+
+## Pipeline Stages
+### $project ------------------------------> Change the set of documents by modifying keys and values. This is a 1:1 mapping.
+### $match --------------------------------> This is a filtering operation and thus this can reduce the amount of documents that are given as input to the next stage. This can be used for example if aggregation should only happen on a subset of the data.
+### $group --------------------------------> This does the actual aggregation and as we are grouping by one or more keys this can have a reducing effect on the amount of documents.
+### $sort ---------------------------------> Sorting the documents one way or the other for the next stage. It should be noted that this might use a lot of memory. Thus if possible one should always try to reduce the amount of documents first.
+### $skip ---------------------------------> With this it is possible to skip forward in the list of documents for a given amount of documents. This allows for example starting only from the 10th document. Typically this will be used together with “$sort” and especially together with “$limit”.
+### $limit --------------------------------> This limits the amount of documents to look at by the given number starting from the current position.
+### $unwind -------------------------------> This is used to unwind document that are using arrays. When using an array the data is kind of pre-joined and this operation will be undone with this to have individual documents again. Thus with this stage we will increase the amount of documents for the next stage. 
+
+## Aggregation Examples
+### db.ships.aggregate([{$group : {_id : "$operator", num_ships : {$sum : 1}}}]) -------------------------------------------> Counts the number of ships per operator, would be in SQL: SELECT operator, count(*) FROM ships GROUP BY operator;
+### db.ships.aggregate([{$project : {_id : 0, operator : {$toLower: "$operator"}, crew : {"$multiply" : ["$crew",10]}}}]) --> Combination of $project-stage and $group-stage.
