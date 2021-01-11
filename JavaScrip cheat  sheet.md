@@ -29,3 +29,26 @@
 ### Boolean (true or false)
 ### Null variable (null)
 ### Undefined variable (undefined)
+
+## Operators
+### Strings concatenation: +
+### Assignation ones: = += -=
+### Arithmetic ones: + - / * % ++ --
+### Logical ones: && || !
+### Relational ones: == != < > <= >=
+### Types comprovations: tipeof <expressio> number/string/boolean/undefined/object/function
+### Conditional operator: (<condicio>)?<valortrue>:<valorfalse>
+
+## Type conversions
+### <valor>.toString()
+### parseInt(<valor>)
+### parseFloat(<valor>)
+
+## Conditional structures
+### if (<codition>) {
+###  //instructions
+### } else if (<codition>) {
+###  //instructions
+### } else {
+###  //instructions
+### }
