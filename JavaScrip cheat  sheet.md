@@ -76,3 +76,28 @@
 ### for (<initialization>; <condition>; <increment>) {
 ###  //instructions
 ### }
+
+## Functions declaration
+### function FuncioName(parameter1, parameter2...) {
+###    // ...
+###    return value; // optional
+### }
+
+### var FuncioName = function(parameter1, parameter2...) {
+###    // ...
+###    return value; // optional
+### }
+
+## Functions call
+### FunctionName(parameter1, parameter2...);
+### var VariableName = FunctionName(parameter1, parameter2...);
+
+## Exception handling
+### try {
+###    // Code block that we want to execute
+###    throw <exception>;
+### } catch(err) {
+###    // Code bloc for exception handling 
+### } finally {
+###    // Block that executes allways
+### }
