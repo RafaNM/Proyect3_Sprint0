@@ -69,3 +69,17 @@
 ## Aggregation Examples
 ### db.ships.aggregate([{$group : {_id : "$operator", num_ships : {$sum : 1}}}]) -------------------------------------------> Counts the number of ships per operator, would be in SQL: SELECT operator, count(*) FROM ships GROUP BY operator;
 ### db.ships.aggregate([{$project : {_id : 0, operator : {$toLower: "$operator"}, crew : {"$multiply" : ["$crew",10]}}}]) --> Combination of $project-stage and $group-stage.
+
+## Aggregation Expressions
+### $sum --------------------------------------------------------------------------------> Summing up values
+#### db.ships.aggregate([{$group : {_id : "$operator", num_ships : {$sum : "$crew"}}}])
+### $avg --------------------------------------------------------------------------------> Calculating average values
+#### db.ships.aggregate([{$group : {_id : "$operator", num_ships : {$avg : "$crew"}}}])
+### $min / $max -------------------------------------------------------------------------> Finding min/max values 
+#### db.ships.aggregate([{$group : {_id : "$operator", num_ships : {$min : "$crew"}}}])
+### $push -------------------------------------------------------------------------------> Pushing values to a result array
+#### db.ships.aggregate([{$group : {_id : "$operator", classes : {$push: "$class"}}}])
+### $addToSet ---------------------------------------------------------------------------> Pushing values to a result array without duplicates
+#### db.ships.aggregate([{$group : {_id : "$operator", classes : {$addToSet : "$class"}}}])
+### $first / $last ---------------------------------------------------------------------->  Getting the first / last document
+#### db.ships.aggregate([{$group : {_id : "$operator", last_class : {$last : "$class"}}}])
