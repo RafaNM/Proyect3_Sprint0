@@ -59,3 +59,18 @@
 #### writeHead()
 #### write()
 #### end()
+
+## The header method of the response object
+### res.header() ------------> Sets the response’s HTTP header field to value. Multiple headerkey-value pairs can be written. This method is really just an alias to res.set().
+
+## The writeHead method of the response object
+### res.writeHead() ---------> Write the HTTP status code (e.g. 200 = success) and any accompanying HTTP response headers. This method must only be called once on a message and it must be called before response.end() is called.
+
+## The write method of the response object
+### res.write() -------------> Write a stream of text to the HTTP response.
+
+## response object
+### res.end() ---------------> End the HTTP response.
+
+## The express next object
+### next() ------------------> The app callback functions may also provide a next object. When the next() method is called the next matching express app event will be evaluated.
