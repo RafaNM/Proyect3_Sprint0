@@ -52,3 +52,27 @@
 ### } else {
 ###  //instructions
 ### }
+
+### switch (<codition>) {
+###  case <value1>:
+###    //instructions ...
+###    break;
+###  ...
+###  default:
+###    //instructions ...
+### }
+
+### “Falses” Expressions: false,null,undefined,0,NaN,""
+
+## Loops
+### while (<codition>) {
+###  //instructions
+### }
+
+### do {
+###  //instructions
+### } while (<codition>)
+
+### for (<initialization>; <condition>; <increment>) {
+###  //instructions
+### }
