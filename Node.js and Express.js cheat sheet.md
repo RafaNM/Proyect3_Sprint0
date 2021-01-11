@@ -42,3 +42,20 @@
 ### app.listen() ---------> This method defines the port that the express app object will listen on. The callback function executes when the app has been started. The method returns an object that summarizes the properties of the server.
 ### // here XXXX is the port number
 ### app.listen(XXXX,function(){});
+
+## The express request object 
+### req -----------> The variable “req” is short for “request”. It represents the data sent to the API endpoint.
+### req.query.x 
+#### // refers to a query
+#### // string parameter x
+### req.body.y 
+#### // refers to a form tag
+#### // with the name of y
+
+## The express response object
+### res ----------------------> The variable “res” is short for “response”. It represents the data sent from the API endpoint.
+### // The response object will have the following methods:
+#### header() 
+#### writeHead()
+#### write()
+#### end()
